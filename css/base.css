@@ -1,0 +1,30 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  min-width: 1536px;
+}
+
+#topBar {
+  width: 100%;
+  min-width: 1536px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+#topBarBox {
+  width: 1536px;
+  height: 64px;
+  margin: 0 auto;
+}
+
+#bodyBoxCenter {
+  width: 1536px;
+  height: calc(100% - 68px);
+  margin: 0 auto;
+}
+
+#bodyBoxFull {
+  width: 100%;
+  height: calc(100% - 68px);
+  margin: 0 auto;
+}
