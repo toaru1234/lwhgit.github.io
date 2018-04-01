@@ -21,10 +21,12 @@ html, body {
   width: 1536px;
   height: calc(100% - 68px);
   margin: 0 auto;
+  overflow: auto;
 }
 
 #bodyBoxFull {
   width: 100%;
   height: calc(100% - 68px);
   margin: 0 auto;
+  overflow: auto;
 }

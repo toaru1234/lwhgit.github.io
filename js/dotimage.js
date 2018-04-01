@@ -4,6 +4,8 @@ var imageViewer = $("#imageViewer");
 var resultArea = $("#resultArea");
 var resultViewer = $("#resultViewer");
 var doItBtn = $("#doItBtn");
+var sensivitySetter = $("#sensivitySetter");
+var progressViewer = $("#progressViewer");
 var sensivity = 400;
 var block = 100;
 
@@ -17,19 +19,19 @@ imageUploadArea.on({
           var canvas = document.createElement('canvas');
           var canvasContext = canvas.getContext("2d");
 
-          if (this.width >= this.height) {
+          //if (this.width >= this.height) {
             width = 600;
             height = this.height / this.width * 600
             canvas.width = 600;
             canvas.height = height;
             canvasContext.drawImage(this, 0, 0, 600, height);
-          }else if (this.width < this.height) {
-            height = 600
-            width = this.width / this.height * 600
-            canvas.width = width;
-            canvas.height = 600;
-            canvasContext.drawImage(this, 0, 0, width, 600);
-          }
+          //} else if (this.width < this.height) {
+          //  height = 600
+          //  width = this.width / this.height * 600
+          //  canvas.width = width;
+          //  canvas.height = 600;
+          //  canvasContext.drawImage(this, 0, 0, width, 600);
+          //}
           imageUploadArea.css("width", canvas.width + "px");
           imageUploadArea.css("height", canvas.height + "px");
 
@@ -55,6 +57,11 @@ imageUploadArea.on({
 
 doItBtn.on("click", function(event) {
   doIt(imageData);
+});
+
+sensivitySetter.on("input change", function(event) {
+  sensivity = sensivitySetter.val();
+  console.log(sensivity)
 });
 
 function doIt(data) {
@@ -89,13 +96,11 @@ function doIt(data) {
       canvasContext.putImageData(canvasData, 0, 0);
       resultViewer.attr("src", canvas.toDataURL("image/jpeg"));
       x ++;
+      progressViewer.text(parseInt(x / width * 100) + "%");
       if (x >= width) {
         x = 0;
-        y += block;
-      }
-
-      if (y >= height && x >= width) {
-        clearInterval(interval);
+          console.log("asd")
+          clearInterval(interval);
       }
     }
   }, 1);

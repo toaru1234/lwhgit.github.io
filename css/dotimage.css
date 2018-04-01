@@ -1,28 +1,23 @@
 #contentBox {
   width: 100%;
   height: calc(100% - 100px);
-  margin: 100px;
+  margin-top: 100px;
 }
 
 #imageUploadArea {
   width: 600px;
   height: 600px;
-  border-width: 2px;
-  border-color: #000;
-  border-style: solid;
   border-radius: 5px;
   box-sizing: content-box;
+  box-shadow: 0px 2px 4px 0px grey;
   float: left;
 }
 
 #resultArea {
   width: 600px;
   height: 600px;
-  border-width: 2px;
-  border-color: #000;
-  border-style: solid;
   border-radius: 5px;
-  position: relative;
+  box-shadow: 0px 2px 4px 0px grey;
   box-sizing: content-box;
   float: left;
 }
@@ -41,13 +36,35 @@
   background-color: #efefef;
 }
 
-#doItBtn {
+#controlBox {
   width: 300px;
-  height: 300px;
-  margin-left: 14px;
-  margin-right: 14px;
-  background-color: #dddddd;
-  box-sizing: content-box;
-  cursor: pointer;
+  height: 100%;
   float: left;
+  overflow: auto;
+}
+
+#doItBtn {
+  width: 200px;
+  height: 80px;
+  margin: 10px auto 0 auto;
+  text-align: center;
+  line-height: 80px;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+}
+
+#sensivitySetterBox {
+  width: 200px;
+  margin: 10px auto 0 auto;
+}
+
+#progressViewer {
+  width: 200px;
+  height: 80px;
+  margin: 10px auto 0 auto;
+  text-align: center;
+  line-height: 80px;
+  font-weight: 600;
+  font-size: 30px;
 }
