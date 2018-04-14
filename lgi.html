@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>이강인</title>
+
+    <style>
+      html, body, div {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="form">
+    </div>
+
+
+    <script type="text/javascript">
+
+      var param = location.href.substring(location.href.indexOf("?") + 1, location.href.length).split("&");
+      var attr = [];
+      for (var i in param) {
+        var temp = param[i].split("=");
+        attr[temp[0]] = temp[1];
+      }
+
+      var c = parseInt(attr["c"]);
+      var w = parseInt(attr["w"]);
+      var h = parseInt(attr["h"]);
+      var str = "";
+
+      if (c) {
+        for (var i = 0;i < c;i ++) {
+          str += createImg(w,h);
+        }
+      } else {
+        str += createImg(w,h);
+      }
+
+      document.getElementById("form").innerHTML = str;
+
+      function createImg(width, height) {
+        if (width && height) {
+          console.log("asd")
+          return "<img width=\"" + width + "\" height=\"" + height + "\" src=\"res/img/lgi.gif\">";
+        } else {
+          return "<img width=\"331\" height=\"590\" src=\"res/img/lgi.gif\">";
+        }
+      }
+
+    </script>
+  </body>
+</html>
